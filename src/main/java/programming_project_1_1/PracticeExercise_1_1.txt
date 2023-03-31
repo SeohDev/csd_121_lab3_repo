@@ -6,3 +6,11 @@ Write an algorithm to decide which commute is cheaper.
 
 Your answer in pseudocode below:
 
+Create a variable for the distance to work
+Create a variable for the amount of gallons used per mile.
+Create a variable for train ticket.
+Set gas_price to 4.
+Set car_maintenance to 0.05.
+Calculate the one-way cost of driving the car to work:
+If car_cost is less than train_price, print "Drive to work"
+If car_cost is greater than or equal to train_price, print "Take the train"

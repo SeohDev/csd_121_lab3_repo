@@ -9,6 +9,13 @@ public class MainComponent extends JComponent {
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D)g;
 
+        House house1 = new House(100, 100, 50, 50);
+        House house2 = new House(250, 250, 250, 250);
+        House house3 = new House(750,300,500,500);
+
+        house1.draw(g2);
+        house2.draw(g2);
+        house3.draw(g2);
         // Add at least three houses of different positions and sizes
     }
 }
