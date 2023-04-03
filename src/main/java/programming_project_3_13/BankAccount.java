@@ -5,7 +5,9 @@ package programming_project_3_13;
    deposits and withdrawals.
 */
 public class BankAccount
-{  
+{
+   private int freeTransaction;
+   private double fee;
    private double balance;
 
    /**
@@ -18,11 +20,13 @@ public class BankAccount
 
    /**
       Constructs a bank account with a given balance.
-      @param initialBalance the initial balance
+      @param initBal the initial balance
    */
-   public BankAccount(double initialBalance)
-   {   
-      balance = initialBalance;
+   public BankAccount(double initBal, double fee, int freeTransaction)
+   {
+      balance = initBal;
+      this.fee = fee;
+      this.freeTransaction = freeTransaction;
    }
 
    /**
@@ -32,6 +36,10 @@ public class BankAccount
    public void deposit(double amount)
    {  
       balance = balance + amount;
+      for (int i = 0; i < (freeTransaction <= 0 ? 1 : 0); i++) {
+         balance -= fee;
+      }
+      freeTransaction--;
    }
 
    /**
@@ -39,8 +47,12 @@ public class BankAccount
       @param amount the amount to withdraw
    */
    public void withdraw(double amount)
-   {   
+   {
       balance = balance - amount;
+      for (int i = 0; i < (freeTransaction <= 0 ? 1 : 0); i++) {
+         balance -= fee;
+      }
+      freeTransaction--;
    }
 
    /**
